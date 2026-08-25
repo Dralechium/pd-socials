@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socials</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 50% 20%, rgba(66, 255, 41, 0.10), transparent 35%),
+                radial-gradient(circle at 20% 80%, rgba(66, 255, 41, 0.05), transparent 30%),
+                #050805;
+
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow-x: hidden;
+        }
+
+        /* Background glow */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 600px;
+            height: 600px;
+
+            background: #42ff29;
+            opacity: 0.035;
+            filter: blur(140px);
+
+            border-radius: 50%;
+
+            top: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            pointer-events: none;
+        }
+
+        /* Main container */
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            padding: 30px 20px;
+            text-align: center;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Profile */
+
+        .profile-picture {
+            width: 115px;
+            height: 115px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                145deg,
+                #161b16,
+                #080a08
+            );
+
+            border: 2px solid rgba(66, 255, 41, 0.7);
+
+            box-shadow:
+                0 0 15px rgba(66, 255, 41, 0.35),
+                0 0 45px rgba(66, 255, 41, 0.12);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #42ff29;
+            font-size: 14px;
+            font-weight: bold;
+
+            overflow: hidden;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Username */
+
+        .username {
+            font-size: 30px;
+            font-weight: 800;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 10px rgba(66, 255, 41, 0.25);
+
+            margin-bottom: 7px;
+        }
+
+        .handle {
+            color: #42ff29;
+            font-size: 14px;
+            font-weight: 600;
+
+            margin-bottom: 14px;
+        }
+
+        .description {
+            color: #9da49d;
+            font-size: 14px;
+            line-height: 1.6;
+
+            max-width: 400px;
+            margin: 0 auto 28px;
+        }
+
+        /* Social buttons */
+
+        .socials {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .social-button {
+            position: relative;
+
+            width: 100%;
+            min-height: 62px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 22px;
+
+            border-radius: 12px;
+
+            background: rgba(12, 16, 12, 0.95);
+
+            border: 1px solid rgba(66, 255, 41, 0.18);
+
+            color: white;
+            text-decoration: none;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+
+            overflow: hidden;
+        }
+
+        /* Green line on the left */
+
+        .social-button::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            width: 3px;
+            height: 100%;
+
+            background: #42ff29;
+
+            box-shadow: 0 0 12px #42ff29;
+
+            opacity: 0.7;
+
+            transition: opacity 0.2s ease;
+        }
+
+        .social-button:hover {
+            transform: translateY(-3px);
+
+            border-color: rgba(66, 255, 41, 0.55);
+
+            background: rgba(18, 25, 18, 0.98);
+
+            box-shadow:
+                0 0 12px rgba(66, 255, 41, 0.15),
+                inset 0 0 20px rgba(66, 255, 41, 0.025);
+        }
+
+        .social-button:hover::before {
+            opacity: 1;
+        }
+
+        /* Icon */
+
+        .icon {
+            width: 38px;
+            height: 38px;
+
+            border-radius: 9px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(66, 255, 41, 0.08);
+
+            color: #42ff29;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            margin-right: 15px;
+
+            flex-shrink: 0;
+        }
+
+        /* Button text */
+
+        .social-info {
+            text-align: left;
+            flex: 1;
+        }
+
+        .social-name {
+            font-size: 15px;
+            font-weight: 700;
+
+            margin-bottom: 3px;
+        }
+
+        .social-handle {
+            color: #737a73;
+            font-size: 12px;
+        }
+
+        /* Arrow */
+
+        .arrow {
+            color: #555b55;
+            font-size: 20px;
+
+            transition:
+                color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .social-button:hover .arrow {
+            color: #42ff29;
+            transform: translateX(3px);
+        }
+
+        /* Footer */
+
+        .footer {
+            margin-top: 28px;
+
+            color: #464b46;
+            font-size: 11px;
+
+            letter-spacing: 0.5px;
+        }
+
+        .footer span {
+            color: #42ff29;
+            opacity: 0.6;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 25px 15px;
+            }
+
+            .profile-picture {
+                width: 100px;
+                height: 100px;
+            }
+
+            .username {
+                font-size: 26px;
+            }
+
+            .social-button {
+                min-height: 58px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- PROFILE PICTURE -->
+        <div class="profile-picture">
+            PFP
+        </div>
+
+        <!-- NAME -->
+        <h1 class="username">Username</h1>
+
+        <div class="handle">@username</div>
+
+        <!-- DESCRIPTION -->
+        <p class="description">
+            Content creator, gamer, and professional internet enjoyer.
+            Check out my socials below!
+        </p>
+
+        <!-- SOCIAL LINKS -->
+        <div class="socials">
+
+            <a class="social-button" href="#" target="_blank">
+                <div class="icon">YT</div>
+
+                <div class="social-info">
+                    <div class="social-name">YouTube</div>
+                    <div class="social-handle">@username</div>
+                </div>
+
+                <div class="arrow">›</div>
+            </a>
+
+
+            <a class="social-button" href="#" target="_blank">
+                <div class="icon">TW</div>
+
+                <div class="social-info">
+                    <div class="social-name">Twitch</div>
+                    <div class="social-handle">twitch.tv/username</div>
+                </div>
+
+                <div class="arrow">›</div>
+            </a>
+
+
+            <a class="social-button" href="#" target="_blank">
+                <div class="icon">X</div>
+
+                <div class="social-info">
+                    <div class="social-name">X / Twitter</div>
+                    <div class="social-handle">@username</div>
+                </div>
+
+                <div class="arrow">›</div>
+            </a>
+
+
+            <a class="social-button" href="#" target="_blank">
+                <div class="icon">DC</div>
+
+                <div class="social-info">
+                    <div class="social-name">Discord</div>
+                    <div class="social-handle">Join my server</div>
+                </div>
+
+                <div class="arrow">›</div>
+            </a>
+
+
+            <a class="social-button" href="#" target="_blank">
+                <div class="icon">IG</div>
+
+                <div class="social-info">
+                    <div class="social-name">Instagram</div>
+                    <div class="social-handle">@username</div>
+                </div>
+
+                <div class="arrow">›</div>
+            </a>
+
+        </div>
+
+        <div class="footer">
+            made with <span>✦</span>
+        </div>
+
+    </main>
+
+</body>
+</html>
