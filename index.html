@@ -13,6 +13,13 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
         body {
             min-height: 100vh;
 
@@ -35,7 +42,7 @@
             justify-content: center;
             align-items: center;
 
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         /* =========================
@@ -97,12 +104,18 @@
             width: 100%;
             max-width: 520px;
 
-            padding: 30px 20px;
+            height: 100vh;
+
+            padding: 20px 20px;
 
             text-align: center;
 
             position: relative;
             z-index: 1;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
 
@@ -111,10 +124,10 @@
         ========================= */
 
         .profile-picture {
-            width: 115px;
-            height: 115px;
+            width: 100px;
+            height: 100px;
 
-            margin: 0 auto 18px;
+            margin: 0 auto 12px;
 
             border-radius: 50%;
 
@@ -138,6 +151,8 @@
             overflow: hidden;
 
             position: relative;
+
+            flex-shrink: 0;
         }
 
         .profile-picture img {
@@ -155,7 +170,7 @@
         ========================= */
 
         .username {
-            font-size: 30px;
+            font-size: 28px;
 
             font-weight: 800;
 
@@ -165,7 +180,7 @@
                 0 0 10px rgba(255, 80, 25, 0.25),
                 0 0 25px rgba(255, 60, 15, 0.08);
 
-            margin-bottom: 7px;
+            margin-bottom: 5px;
         }
 
 
@@ -176,11 +191,11 @@
         .handle {
             color: #ff6127;
 
-            font-size: 14px;
+            font-size: 13px;
 
             font-weight: 600;
 
-            margin-bottom: 14px;
+            margin-bottom: 10px;
 
             text-shadow:
                 0 0 10px rgba(255, 75, 20, 0.25);
@@ -194,13 +209,13 @@
         .description {
             color: #a59a95;
 
-            font-size: 14px;
+            font-size: 13px;
 
-            line-height: 1.6;
+            line-height: 1.5;
 
             max-width: 400px;
 
-            margin: 0 auto 28px;
+            margin: 0 auto 17px;
         }
 
 
@@ -213,7 +228,7 @@
 
             flex-direction: column;
 
-            gap: 13px;
+            gap: 9px;
         }
 
 
@@ -272,14 +287,14 @@
             position: relative;
 
             width: 100%;
-            min-height: 62px;
+            min-height: 55px;
 
             display: flex;
             align-items: center;
 
-            padding: 0 22px;
+            padding: 0 20px;
 
-            border-radius: 12px;
+            border-radius: 11px;
 
             background:
                 linear-gradient(
@@ -369,7 +384,7 @@
         ========================= */
 
         .social-button:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
 
             border-color: var(--social-color);
 
@@ -401,10 +416,10 @@
         ========================= */
 
         .icon {
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
 
-            border-radius: 9px;
+            border-radius: 8px;
 
             display: flex;
             align-items: center;
@@ -414,7 +429,7 @@
 
             border: 1px solid var(--social-border);
 
-            margin-right: 15px;
+            margin-right: 13px;
 
             flex-shrink: 0;
 
@@ -432,7 +447,7 @@
 
             object-fit: contain;
 
-            padding: 7px;
+            padding: 6px;
 
             display: block;
         }
@@ -458,17 +473,17 @@
         }
 
         .social-name {
-            font-size: 15px;
+            font-size: 14px;
 
             font-weight: 700;
 
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .social-handle {
             color: #756b66;
 
-            font-size: 12px;
+            font-size: 11px;
 
             transition:
                 color 0.2s ease;
@@ -486,7 +501,7 @@
         .arrow {
             color: #514943;
 
-            font-size: 20px;
+            font-size: 19px;
 
             transition:
                 color 0.2s ease,
@@ -573,26 +588,88 @@
 
 
         /* =========================
-           MOBILE
+           SMALL SCREENS
         ========================= */
 
-        @media (max-width: 500px) {
+        @media (max-height: 700px) {
 
             .container {
-                padding: 25px 15px;
+                padding: 12px 15px;
             }
 
             .profile-picture {
-                width: 100px;
-                height: 100px;
+                width: 80px;
+                height: 80px;
+                margin-bottom: 8px;
             }
 
             .username {
-                font-size: 26px;
+                font-size: 24px;
+            }
+
+            .handle {
+                margin-bottom: 6px;
+            }
+
+            .description {
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+
+            .socials {
+                gap: 6px;
             }
 
             .social-button {
-                min-height: 58px;
+                min-height: 47px;
+            }
+
+            .icon {
+                width: 30px;
+                height: 30px;
+                margin-right: 11px;
+            }
+
+            .social-name {
+                font-size: 13px;
+            }
+
+            .social-handle {
+                font-size: 10px;
+            }
+        }
+
+
+        /* =========================
+           VERY SMALL SCREENS
+        ========================= */
+
+        @media (max-height: 580px) {
+
+            .profile-picture {
+                width: 65px;
+                height: 65px;
+            }
+
+            .username {
+                font-size: 21px;
+            }
+
+            .handle {
+                font-size: 11px;
+            }
+
+            .description {
+                display: none;
+            }
+
+            .social-button {
+                min-height: 42px;
+            }
+
+            .icon {
+                width: 27px;
+                height: 27px;
             }
         }
 
@@ -604,10 +681,7 @@
 
     <main class="container">
 
-
-        <!-- =========================
-             PROFILE PICTURE
-        ========================= -->
+        <!-- PROFILE PICTURE -->
 
         <div class="profile-picture">
 
@@ -619,9 +693,7 @@
         </div>
 
 
-        <!-- =========================
-             NAME
-        ========================= -->
+        <!-- NAME -->
 
         <h1 class="username">
             Prince Diamond
@@ -633,18 +705,14 @@
         </div>
 
 
-        <!-- =========================
-             DESCRIPTION
-        ========================= -->
+        <!-- DESCRIPTION -->
 
         <p class="description">
             Streaming every single day for almost 1 year straight.
         </p>
 
 
-        <!-- =========================
-             SOCIAL LINKS
-        ========================= -->
+        <!-- SOCIAL LINKS -->
 
         <div class="socials">
 
@@ -653,7 +721,7 @@
 
             <a
                 class="social-button youtube"
-                href="#"
+                href="https://www.youtube.com/@Diamondprince"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -688,7 +756,7 @@
 
             <a
                 class="social-button twitch"
-                href="#"
+                href="https://www.twitch.tv/princediamondd"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -707,7 +775,7 @@
                     </div>
 
                     <div class="social-handle">
-                        twitch.tv/princediamondd
+                        @princediamondd
                     </div>
 
                 </div>
@@ -723,7 +791,7 @@
 
             <a
                 class="social-button twitter"
-                href="#"
+                href="https://x.com/PrinceDiamonddd"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -758,7 +826,7 @@
 
             <a
                 class="social-button discord"
-                href="#"
+                href="https://discord.gg/3RFyaDEM9k"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -793,7 +861,7 @@
 
             <a
                 class="social-button instagram"
-                href="#"
+                href="https://www.instagram.com/princediamondd"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -828,7 +896,7 @@
 
             <a
                 class="social-button tiktok"
-                href="#"
+                href="https://www.tiktok.com/@princediamondlive"
                 target="_blank"
                 rel="noopener noreferrer"
             >
