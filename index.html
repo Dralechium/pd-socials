@@ -38,7 +38,9 @@
             overflow-x: hidden;
         }
 
-        /* Background glow */
+        /* =========================
+           BACKGROUND GLOW
+        ========================= */
 
         body::before {
             content: "";
@@ -86,7 +88,10 @@
             pointer-events: none;
         }
 
-        /* Main container */
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
 
         .container {
             width: 100%;
@@ -100,7 +105,10 @@
             z-index: 1;
         }
 
-        /* Profile */
+
+        /* =========================
+           PROFILE PICTURE
+        ========================= */
 
         .profile-picture {
             width: 115px;
@@ -141,7 +149,10 @@
             display: block;
         }
 
-        /* Username */
+
+        /* =========================
+           USERNAME
+        ========================= */
 
         .username {
             font-size: 30px;
@@ -157,7 +168,10 @@
             margin-bottom: 7px;
         }
 
-        /* Handle */
+
+        /* =========================
+           HANDLE
+        ========================= */
 
         .handle {
             color: #ff6127;
@@ -172,7 +186,10 @@
                 0 0 10px rgba(255, 75, 20, 0.25);
         }
 
-        /* Description */
+
+        /* =========================
+           DESCRIPTION
+        ========================= */
 
         .description {
             color: #a59a95;
@@ -186,7 +203,10 @@
             margin: 0 auto 28px;
         }
 
-        /* Social buttons */
+
+        /* =========================
+           SOCIAL BUTTONS
+        ========================= */
 
         .socials {
             display: flex;
@@ -195,6 +215,58 @@
 
             gap: 13px;
         }
+
+
+        /* =========================
+           SOCIAL COLOR VARIABLES
+        ========================= */
+
+        .youtube {
+            --social-color: #ff0000;
+            --social-color-soft: rgba(255, 0, 0, 0.12);
+            --social-border: rgba(255, 0, 0, 0.22);
+            --social-glow: rgba(255, 0, 0, 0.18);
+        }
+
+        .twitch {
+            --social-color: #9146ff;
+            --social-color-soft: rgba(145, 70, 255, 0.12);
+            --social-border: rgba(145, 70, 255, 0.22);
+            --social-glow: rgba(145, 70, 255, 0.18);
+        }
+
+        .twitter {
+            --social-color: #1d9bf0;
+            --social-color-soft: rgba(29, 155, 240, 0.12);
+            --social-border: rgba(29, 155, 240, 0.22);
+            --social-glow: rgba(29, 155, 240, 0.18);
+        }
+
+        .discord {
+            --social-color: #5865f2;
+            --social-color-soft: rgba(88, 101, 242, 0.12);
+            --social-border: rgba(88, 101, 242, 0.22);
+            --social-glow: rgba(88, 101, 242, 0.18);
+        }
+
+        .instagram {
+            --social-color: #f13f79;
+            --social-color-soft: rgba(225, 48, 108, 0.12);
+            --social-border: rgba(225, 48, 108, 0.22);
+            --social-glow: rgba(225, 48, 108, 0.18);
+        }
+
+        .tiktok {
+            --social-color: #00f2ea;
+            --social-color-soft: rgba(0, 242, 234, 0.12);
+            --social-border: rgba(0, 242, 234, 0.22);
+            --social-glow: rgba(0, 242, 234, 0.18);
+        }
+
+
+        /* =========================
+           SOCIAL BUTTON
+        ========================= */
 
         .social-button {
             position: relative;
@@ -216,7 +288,7 @@
                     rgba(9, 7, 6, 0.98)
                 );
 
-            border: 1px solid rgba(255, 83, 28, 0.18);
+            border: 1px solid var(--social-border);
 
             color: white;
 
@@ -231,7 +303,10 @@
             overflow: hidden;
         }
 
-        /* Orange line on the left */
+
+        /* =========================
+           COLORED LEFT LINE
+        ========================= */
 
         .social-button::before {
             content: "";
@@ -244,20 +319,23 @@
             width: 3px;
             height: 100%;
 
-            background: #ff5722;
+            background: var(--social-color);
 
             box-shadow:
-                0 0 12px #ff5722,
-                0 0 20px rgba(255, 75, 20, 0.35);
+                0 0 12px var(--social-color),
+                0 0 22px var(--social-glow);
 
-            opacity: 0.7;
+            opacity: 0.8;
 
             transition:
                 opacity 0.2s ease,
                 width 0.2s ease;
         }
 
-        /* Subtle orange shine */
+
+        /* =========================
+           HOVER SHINE
+        ========================= */
 
         .social-button::after {
             content: "";
@@ -274,21 +352,26 @@
                 linear-gradient(
                     90deg,
                     transparent,
-                    rgba(255, 100, 40, 0.04),
+                    var(--social-glow),
                     transparent
                 );
+
+            opacity: 0.35;
 
             transition: left 0.5s ease;
 
             pointer-events: none;
         }
 
-        /* Hover */
+
+        /* =========================
+           HOVER
+        ========================= */
 
         .social-button:hover {
             transform: translateY(-3px);
 
-            border-color: rgba(255, 91, 35, 0.55);
+            border-color: var(--social-color);
 
             background:
                 linear-gradient(
@@ -298,9 +381,9 @@
                 );
 
             box-shadow:
-                0 0 12px rgba(255, 75, 20, 0.15),
-                0 0 30px rgba(255, 60, 15, 0.06),
-                inset 0 0 20px rgba(255, 75, 20, 0.025);
+                0 0 12px var(--social-glow),
+                0 0 30px var(--social-glow),
+                inset 0 0 20px var(--social-color-soft);
         }
 
         .social-button:hover::before {
@@ -312,7 +395,10 @@
             left: 130%;
         }
 
-        /* Icon */
+
+        /* =========================
+           ICON
+        ========================= */
 
         .icon {
             width: 38px;
@@ -324,43 +410,56 @@
             align-items: center;
             justify-content: center;
 
-            background: rgba(255, 78, 25, 0.075);
+            background: var(--social-color-soft);
 
-            border: 1px solid rgba(255, 85, 30, 0.08);
-
-            color: #ff6127;
-
-            font-size: 16px;
-            font-weight: bold;
+            border: 1px solid var(--social-border);
 
             margin-right: 15px;
 
             flex-shrink: 0;
 
-            text-shadow:
-                0 0 8px rgba(255, 75, 20, 0.3);
+            overflow: hidden;
 
             transition:
                 background 0.2s ease,
-                box-shadow 0.2s ease;
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .icon img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            padding: 7px;
+
+            display: block;
         }
 
         .social-button:hover .icon {
-            background: rgba(255, 78, 25, 0.12);
+            background: var(--social-color-soft);
 
             box-shadow:
-                0 0 12px rgba(255, 70, 20, 0.08);
+                0 0 12px var(--social-glow);
+
+            transform: scale(1.04);
         }
 
-        /* Button text */
+
+        /* =========================
+           SOCIAL TEXT
+        ========================= */
 
         .social-info {
             text-align: left;
+
             flex: 1;
         }
 
         .social-name {
             font-size: 15px;
+
             font-weight: 700;
 
             margin-bottom: 3px;
@@ -371,14 +470,18 @@
 
             font-size: 12px;
 
-            transition: color 0.2s ease;
+            transition:
+                color 0.2s ease;
         }
 
         .social-button:hover .social-handle {
-            color: #95857d;
+            color: #a89b94;
         }
 
-        /* Arrow */
+
+        /* =========================
+           ARROW
+        ========================= */
 
         .arrow {
             color: #514943;
@@ -392,15 +495,86 @@
         }
 
         .social-button:hover .arrow {
-            color: #ff6127;
+            color: var(--social-color);
 
             transform: translateX(3px);
 
             text-shadow:
-                0 0 8px rgba(255, 75, 20, 0.4);
+                0 0 8px var(--social-color);
         }
 
-        /* Mobile */
+
+        /* =========================
+           TIKTOK SPECIAL COLOR
+        ========================= */
+
+        .tiktok::before {
+            background: linear-gradient(
+                to bottom,
+                #00f2ea,
+                #ff0050
+            );
+
+            box-shadow:
+                0 0 10px #00f2ea,
+                0 0 18px #ff0050;
+        }
+
+        .tiktok:hover {
+            border-color: #00f2ea;
+
+            box-shadow:
+                0 0 12px rgba(0, 242, 234, 0.15),
+                0 0 28px rgba(255, 0, 80, 0.12),
+                inset 0 0 20px rgba(0, 242, 234, 0.025);
+        }
+
+        .tiktok:hover .arrow {
+            color: #00f2ea;
+
+            text-shadow:
+                0 0 8px #00f2ea;
+        }
+
+
+        /* =========================
+           INSTAGRAM SPECIAL GRADIENT
+        ========================= */
+
+        .instagram::before {
+            background:
+                linear-gradient(
+                    to bottom,
+                    #833ab4,
+                    #fd1d1d,
+                    #fcb045
+                );
+
+            box-shadow:
+                0 0 10px #fd1d1d,
+                0 0 18px rgba(225, 48, 108, 0.5);
+        }
+
+        .instagram:hover {
+            border-color: #f13f79;
+
+            box-shadow:
+                0 0 12px rgba(225, 48, 108, 0.16),
+                0 0 28px rgba(131, 58, 180, 0.10),
+                inset 0 0 20px rgba(225, 48, 108, 0.025);
+        }
+
+        .instagram:hover .arrow {
+            color: #f13f79;
+
+            text-shadow:
+                0 0 8px #f13f79;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 500px) {
 
@@ -421,55 +595,78 @@
                 min-height: 58px;
             }
         }
+
     </style>
 </head>
+
 
 <body>
 
     <main class="container">
 
-        <!-- PROFILE PICTURE -->
+
+        <!-- =========================
+             PROFILE PICTURE
+        ========================= -->
 
         <div class="profile-picture">
+
             <img
-                src="https://files.catbox.moe/sw2fmk.png"
+                src="pd.png"
                 alt="Prince Diamond"
             >
+
         </div>
 
-        <!-- NAME -->
+
+        <!-- =========================
+             NAME
+        ========================= -->
 
         <h1 class="username">
             Prince Diamond
         </h1>
 
+
         <div class="handle">
             @princediamond
         </div>
 
-        <!-- DESCRIPTION -->
+
+        <!-- =========================
+             DESCRIPTION
+        ========================= -->
 
         <p class="description">
             Streaming every single day for almost 1 year straight.
         </p>
 
-        <!-- SOCIAL LINKS -->
+
+        <!-- =========================
+             SOCIAL LINKS
+        ========================= -->
 
         <div class="socials">
+
 
             <!-- YOUTUBE -->
 
             <a
-                class="social-button"
+                class="social-button youtube"
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
             >
+
                 <div class="icon">
-                    YT
+                    <img
+                        src="youtube.png"
+                        alt="YouTube"
+                    >
                 </div>
 
                 <div class="social-info">
+
                     <div class="social-name">
                         YouTube
                     </div>
@@ -477,27 +674,34 @@
                     <div class="social-handle">
                         @Diamondprince
                     </div>
+
                 </div>
 
                 <div class="arrow">
                     ›
                 </div>
+
             </a>
 
 
             <!-- TWITCH -->
 
             <a
-                class="social-button"
+                class="social-button twitch"
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
             >
+
                 <div class="icon">
-                    TW
+                    <img
+                        src="twitch.png"
+                        alt="Twitch"
+                    >
                 </div>
 
                 <div class="social-info">
+
                     <div class="social-name">
                         Twitch
                     </div>
@@ -505,27 +709,34 @@
                     <div class="social-handle">
                         twitch.tv/princediamondd
                     </div>
+
                 </div>
 
                 <div class="arrow">
                     ›
                 </div>
+
             </a>
 
 
             <!-- X / TWITTER -->
 
             <a
-                class="social-button"
+                class="social-button twitter"
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
             >
+
                 <div class="icon">
-                    X
+                    <img
+                        src="x.png"
+                        alt="X / Twitter"
+                    >
                 </div>
 
                 <div class="social-info">
+
                     <div class="social-name">
                         X / Twitter
                     </div>
@@ -533,27 +744,34 @@
                     <div class="social-handle">
                         @PrinceDiamonddd
                     </div>
+
                 </div>
 
                 <div class="arrow">
                     ›
                 </div>
+
             </a>
 
 
             <!-- DISCORD -->
 
             <a
-                class="social-button"
+                class="social-button discord"
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
             >
+
                 <div class="icon">
-                    DC
+                    <img
+                        src="discord.png"
+                        alt="Discord"
+                    >
                 </div>
 
                 <div class="social-info">
+
                     <div class="social-name">
                         Discord
                     </div>
@@ -561,27 +779,34 @@
                     <div class="social-handle">
                         Join Diamond's Disciples!
                     </div>
+
                 </div>
 
                 <div class="arrow">
                     ›
                 </div>
+
             </a>
 
 
             <!-- INSTAGRAM -->
 
             <a
-                class="social-button"
+                class="social-button instagram"
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
             >
+
                 <div class="icon">
-                    IG
+                    <img
+                        src="insta.png"
+                        alt="Instagram"
+                    >
                 </div>
 
                 <div class="social-info">
+
                     <div class="social-name">
                         Instagram
                     </div>
@@ -589,12 +814,50 @@
                     <div class="social-handle">
                         @princediamondd
                     </div>
+
                 </div>
 
                 <div class="arrow">
                     ›
                 </div>
+
             </a>
+
+
+            <!-- TIKTOK -->
+
+            <a
+                class="social-button tiktok"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="icon">
+                    <img
+                        src="tiktok.png"
+                        alt="TikTok"
+                    >
+                </div>
+
+                <div class="social-info">
+
+                    <div class="social-name">
+                        TikTok
+                    </div>
+
+                    <div class="social-handle">
+                        @princediamondlive
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
 
         </div>
 
