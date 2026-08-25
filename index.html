@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Socials</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -15,23 +13,18 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-
-        /* =========================
-           PAGE
-        ========================= */
-
         body {
             min-height: 100vh;
 
             background:
                 radial-gradient(
-                    circle at 50% 15%,
-                    rgba(255, 90, 25, 0.13),
+                    circle at 50% 20%,
+                    rgba(255, 75, 20, 0.13),
                     transparent 35%
                 ),
                 radial-gradient(
-                    circle at 10% 90%,
-                    rgba(180, 45, 10, 0.08),
+                    circle at 20% 80%,
+                    rgba(180, 45, 10, 0.07),
                     transparent 30%
                 ),
                 #070504;
@@ -43,39 +36,33 @@
             align-items: center;
 
             overflow-x: hidden;
-
-            position: relative;
         }
 
-
-        /* =========================
-           AMBIENT BACKGROUND GLOW
-        ========================= */
+        /* Background glow */
 
         body::before {
             content: "";
 
             position: fixed;
 
-            width: 650px;
-            height: 650px;
+            width: 600px;
+            height: 600px;
 
             background: #ff4d18;
 
-            opacity: 0.035;
+            opacity: 0.045;
 
-            filter: blur(150px);
+            filter: blur(140px);
 
             border-radius: 50%;
 
-            top: -300px;
+            top: -250px;
             left: 50%;
 
             transform: translateX(-50%);
 
             pointer-events: none;
         }
-
 
         body::after {
             content: "";
@@ -85,9 +72,9 @@
             width: 400px;
             height: 400px;
 
-            background: #ff6a21;
+            background: #ff5a1f;
 
-            opacity: 0.018;
+            opacity: 0.02;
 
             filter: blur(130px);
 
@@ -99,10 +86,7 @@
             pointer-events: none;
         }
 
-
-        /* =========================
-           MAIN CONTAINER
-        ========================= */
+        /* Main container */
 
         .container {
             width: 100%;
@@ -113,36 +97,31 @@
             text-align: center;
 
             position: relative;
-
             z-index: 1;
         }
 
-
-        /* =========================
-           PROFILE PICTURE
-        ========================= */
+        /* Profile */
 
         .profile-picture {
             width: 115px;
             height: 115px;
 
-            margin: 0 auto 20px;
+            margin: 0 auto 18px;
 
             border-radius: 50%;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #1b100c,
-                    #080605
-                );
+            background: linear-gradient(
+                145deg,
+                #1b100c,
+                #080605
+            );
 
             border: 2px solid rgba(255, 91, 35, 0.8);
 
             box-shadow:
                 0 0 15px rgba(255, 75, 20, 0.45),
-                0 0 35px rgba(255, 75, 20, 0.20),
-                0 0 70px rgba(255, 60, 15, 0.08);
+                0 0 45px rgba(255, 75, 20, 0.16),
+                0 0 80px rgba(255, 60, 15, 0.06);
 
             display: flex;
             align-items: center;
@@ -153,23 +132,6 @@
             position: relative;
         }
 
-
-        .profile-picture::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            border-radius: 50%;
-
-            box-shadow:
-                inset 0 0 20px rgba(0, 0, 0, 0.45);
-
-            pointer-events: none;
-        }
-
-
         .profile-picture img {
             width: 100%;
             height: 100%;
@@ -179,10 +141,7 @@
             display: block;
         }
 
-
-        /* =========================
-           USERNAME
-        ========================= */
+        /* Username */
 
         .username {
             font-size: 30px;
@@ -198,17 +157,14 @@
             margin-bottom: 7px;
         }
 
-
-        /* =========================
-           HANDLE
-        ========================= */
+        /* Handle */
 
         .handle {
             color: #ff6127;
 
             font-size: 14px;
 
-            font-weight: 700;
+            font-weight: 600;
 
             margin-bottom: 14px;
 
@@ -216,10 +172,7 @@
                 0 0 10px rgba(255, 75, 20, 0.25);
         }
 
-
-        /* =========================
-           DESCRIPTION
-        ========================= */
+        /* Description */
 
         .description {
             color: #a59a95;
@@ -233,10 +186,7 @@
             margin: 0 auto 28px;
         }
 
-
-        /* =========================
-           SOCIAL BUTTON CONTAINER
-        ========================= */
+        /* Social buttons */
 
         .socials {
             display: flex;
@@ -246,20 +196,13 @@
             gap: 13px;
         }
 
-
-        /* =========================
-           SOCIAL BUTTON
-        ========================= */
-
         .social-button {
             position: relative;
 
             width: 100%;
-
             min-height: 62px;
 
             display: flex;
-
             align-items: center;
 
             padding: 0 22px;
@@ -270,7 +213,7 @@
                 linear-gradient(
                     145deg,
                     rgba(20, 13, 10, 0.97),
-                    rgba(10, 8, 7, 0.98)
+                    rgba(9, 7, 6, 0.98)
                 );
 
             border: 1px solid rgba(255, 83, 28, 0.18);
@@ -288,8 +231,7 @@
             overflow: hidden;
         }
 
-
-        /* Orange vertical accent */
+        /* Orange line on the left */
 
         .social-button::before {
             content: "";
@@ -305,16 +247,15 @@
             background: #ff5722;
 
             box-shadow:
-                0 0 10px #ff5722,
-                0 0 20px rgba(255, 75, 20, 0.45);
+                0 0 12px #ff5722,
+                0 0 20px rgba(255, 75, 20, 0.35);
 
-            opacity: 0.75;
+            opacity: 0.7;
 
             transition:
                 opacity 0.2s ease,
                 width 0.2s ease;
         }
-
 
         /* Subtle orange shine */
 
@@ -333,7 +274,7 @@
                 linear-gradient(
                     90deg,
                     transparent,
-                    rgba(255, 100, 40, 0.035),
+                    rgba(255, 100, 40, 0.04),
                     transparent
                 );
 
@@ -342,46 +283,36 @@
             pointer-events: none;
         }
 
-
-        /* =========================
-           HOVER
-        ========================= */
+        /* Hover */
 
         .social-button:hover {
             transform: translateY(-3px);
 
-            border-color:
-                rgba(255, 91, 35, 0.55);
+            border-color: rgba(255, 91, 35, 0.55);
 
             background:
                 linear-gradient(
                     145deg,
-                    rgba(29, 17, 12, 0.98),
+                    rgba(30, 17, 12, 0.98),
                     rgba(13, 9, 7, 0.99)
                 );
 
             box-shadow:
-                0 0 12px rgba(255, 75, 20, 0.14),
+                0 0 12px rgba(255, 75, 20, 0.15),
                 0 0 30px rgba(255, 60, 15, 0.06),
-                inset 0 0 25px rgba(255, 75, 20, 0.025);
+                inset 0 0 20px rgba(255, 75, 20, 0.025);
         }
-
 
         .social-button:hover::before {
             opacity: 1;
-
             width: 4px;
         }
-
 
         .social-button:hover::after {
             left: 130%;
         }
 
-
-        /* =========================
-           ICON
-        ========================= */
+        /* Icon */
 
         .icon {
             width: 38px;
@@ -390,21 +321,17 @@
             border-radius: 9px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
-            background:
-                rgba(255, 78, 25, 0.075);
+            background: rgba(255, 78, 25, 0.075);
 
-            border:
-                1px solid rgba(255, 85, 30, 0.08);
+            border: 1px solid rgba(255, 85, 30, 0.08);
 
             color: #ff6127;
 
-            font-size: 13px;
-
-            font-weight: 800;
+            font-size: 16px;
+            font-weight: bold;
 
             margin-right: 15px;
 
@@ -418,59 +345,45 @@
                 box-shadow 0.2s ease;
         }
 
-
         .social-button:hover .icon {
-            background:
-                rgba(255, 78, 25, 0.12);
+            background: rgba(255, 78, 25, 0.12);
 
             box-shadow:
                 0 0 12px rgba(255, 70, 20, 0.08);
         }
 
-
-        /* =========================
-           SOCIAL TEXT
-        ========================= */
+        /* Button text */
 
         .social-info {
             text-align: left;
-
             flex: 1;
         }
 
-
         .social-name {
             font-size: 15px;
-
             font-weight: 700;
 
             margin-bottom: 3px;
         }
-
 
         .social-handle {
             color: #756b66;
 
             font-size: 12px;
 
-            transition:
-                color 0.2s ease;
+            transition: color 0.2s ease;
         }
-
 
         .social-button:hover .social-handle {
             color: #95857d;
         }
 
-
-        /* =========================
-           ARROW
-        ========================= */
+        /* Arrow */
 
         .arrow {
             color: #514943;
 
-            font-size: 22px;
+            font-size: 20px;
 
             transition:
                 color 0.2s ease,
@@ -478,20 +391,16 @@
                 text-shadow 0.2s ease;
         }
 
-
         .social-button:hover .arrow {
             color: #ff6127;
 
-            transform: translateX(4px);
+            transform: translateX(3px);
 
             text-shadow:
                 0 0 8px rgba(255, 75, 20, 0.4);
         }
 
-
-        /* =========================
-           MOBILE
-        ========================= */
+        /* Mobile */
 
         @media (max-width: 500px) {
 
@@ -499,70 +408,54 @@
                 padding: 25px 15px;
             }
 
-
             .profile-picture {
                 width: 100px;
                 height: 100px;
             }
 
-
             .username {
                 font-size: 26px;
             }
-
 
             .social-button {
                 min-height: 58px;
             }
         }
-
     </style>
 </head>
-
 
 <body>
 
     <main class="container">
 
-
         <!-- PROFILE PICTURE -->
 
         <div class="profile-picture">
-
             <img
                 src="https://files.catbox.moe/sw2fmk.png"
-                alt="Profile Picture"
+                alt="Prince Diamond"
             >
-
         </div>
-
 
         <!-- NAME -->
 
         <h1 class="username">
-            Username
+            Prince Diamond
         </h1>
 
-
-        <!-- HANDLE -->
-
         <div class="handle">
-            @username
+            @princediamond
         </div>
-
 
         <!-- DESCRIPTION -->
 
         <p class="description">
-            Content creator, gamer, and professional internet enjoyer.
-            Check out my socials below!
+            Streaming every single day for almost 1 year straight.
         </p>
-
 
         <!-- SOCIAL LINKS -->
 
         <div class="socials">
-
 
             <!-- YOUTUBE -->
 
@@ -570,28 +463,25 @@
                 class="social-button"
                 href="#"
                 target="_blank"
+                rel="noopener noreferrer"
             >
-
                 <div class="icon">
                     YT
                 </div>
 
                 <div class="social-info">
-
                     <div class="social-name">
                         YouTube
                     </div>
 
                     <div class="social-handle">
-                        @username
+                        @Diamondprince
                     </div>
-
                 </div>
 
                 <div class="arrow">
                     ›
                 </div>
-
             </a>
 
 
@@ -601,28 +491,25 @@
                 class="social-button"
                 href="#"
                 target="_blank"
+                rel="noopener noreferrer"
             >
-
                 <div class="icon">
                     TW
                 </div>
 
                 <div class="social-info">
-
                     <div class="social-name">
                         Twitch
                     </div>
 
                     <div class="social-handle">
-                        twitch.tv/username
+                        twitch.tv/princediamondd
                     </div>
-
                 </div>
 
                 <div class="arrow">
                     ›
                 </div>
-
             </a>
 
 
@@ -632,28 +519,25 @@
                 class="social-button"
                 href="#"
                 target="_blank"
+                rel="noopener noreferrer"
             >
-
                 <div class="icon">
                     X
                 </div>
 
                 <div class="social-info">
-
                     <div class="social-name">
                         X / Twitter
                     </div>
 
                     <div class="social-handle">
-                        @username
+                        @PrinceDiamonddd
                     </div>
-
                 </div>
 
                 <div class="arrow">
                     ›
                 </div>
-
             </a>
 
 
@@ -663,28 +547,25 @@
                 class="social-button"
                 href="#"
                 target="_blank"
+                rel="noopener noreferrer"
             >
-
                 <div class="icon">
                     DC
                 </div>
 
                 <div class="social-info">
-
                     <div class="social-name">
                         Discord
                     </div>
 
                     <div class="social-handle">
-                        Join my server
+                        Join Diamond's Disciples!
                     </div>
-
                 </div>
 
                 <div class="arrow">
                     ›
                 </div>
-
             </a>
 
 
@@ -694,36 +575,30 @@
                 class="social-button"
                 href="#"
                 target="_blank"
+                rel="noopener noreferrer"
             >
-
                 <div class="icon">
                     IG
                 </div>
 
                 <div class="social-info">
-
                     <div class="social-name">
                         Instagram
                     </div>
 
                     <div class="social-handle">
-                        @username
+                        @princediamondd
                     </div>
-
                 </div>
 
                 <div class="arrow">
                     ›
                 </div>
-
             </a>
 
-
         </div>
-
 
     </main>
 
 </body>
-
 </html>
